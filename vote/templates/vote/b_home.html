@@ -1,0 +1,144 @@
+{% extends "vote/b_navbar.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'vote/css/footer.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <title>Digital Voting System</title>
+</head>
+<body>
+
+<div class="notfooter">
+<div class="card">
+
+    <div class="section">
+        <h1 class="Head1">Digital Voting System</h1>
+         <div class="intro">
+          <div class="Bod1">
+           <div>
+            Digital Voting System is a web-based voting system, which transmits votes via a web browser over the internet.
+            It facilitates the running of polls and ballots online. It has been developed to simplify the process of organizing
+             polls and make it convenient for voters to vote remotely from their home computers while taking into consideration
+             security and anonymity.
+          </div>
+          <div>
+            This site will allow users to create and partipate in polls created by other users or admins for various purposes such
+            as determining the CR of any class, any club related poll or even a poll as simple as deciding the best junk food. The 
+            accessibility this site offers guarantees a satisfying experience.
+          </div>
+          </div>
+          <img id="logo" src="{% static 'images/templogo.png' %}">
+       </div>
+      </div>
+
+    <div class="section">
+     <h1 class="Head1">About K. J. Somaiya Institute of Engineering and Information Technology, Sion</h1>
+      <div class="intro">
+       <div class="Bod1">The K. J. Somaiya Institute of Engineering and Information Technology (KJSIEIT), was established
+         by the Somaiya Trust in the year 2001 at Ayurvihar campus, Sion. The institute was set up primarily
+         in response to the need for imparting quality education in the modern field of Information Technology
+         and the allied branches of Engineering and Technology. The College is housed in a G+8 storeyed building 
+         and in International Standard of Riturang building with airy classrooms, hi-tech laboratories, 
+         auditorium, canteen, common rooms etc. {{ Hello }}
+       </div>
+        <img id='kj' src="{% static 'images/KJ.webp' %}">
+      </div>
+    </div>
+
+    <div class="section">
+        <h1 class="Head1">Vision of the Institute</h1>
+         <div class="intro">
+          <div class="Bod1">
+            To emerge as a synonym of quality, excellence and commitment in the field of engineering education by 
+            unlocking potential, nurturing talent and transforming young minds to create future ready engineers.
+          </div>
+       </div>
+  </div>
+
+  <div class="section">
+    <h1 class="Head1">Mission of the Institute</h1>
+     <div class="intro">
+      <div class="Bod1">
+        <ul>
+        <li>&bull; To provide students with a thorough knowledge of engineering to refine their professional skills.</li>
+        <li>&bull; To nurture creativity and innovation while encouraging multidisciplinary interaction.</li>
+        <li>&bull; To train students to be industry ready and capable of working effectively as an individual and in team.</li>
+        <li>&bull; To inculcate ethical behaviour, responsibility and commitment among students.</li>
+        </ul>
+      </div>
+   </div>
+  </div>
+
+  <div class="section">
+    <h1 class="Head1">Quality Policy</h1>
+     <div class="intro">
+      <div class="Bod1">
+        <ul>
+            <li>&bull; To conform to the requirements of regulatory authorities viz. AICTE, DTE and University of Mumbai.</li>
+            <li>&bull; To maintain transparency and fair practices in admission and recruitment processes.</li>
+            <li>&bull; To ensure continuous evaluation and examination process.</li>
+            <li>&bull; To ensure best academic ambience by providing high-end equipment in the laboratories.</li>
+            <li>&bull; To ensure a safe and secure environment for all stakeholders.</li>
+            <li>&bull; To promote industry institute interaction, research & development, placements, technical,
+                       co-curricular and extracurricular activities.</li>
+            </ul>
+      </div>
+   </div>
+  </div>
+
+  <div class="section">
+    <h1 class="Head1">Objectives</h1>
+     <div class="intro">
+      <div class="Bod1">
+        <ul>
+            <li>&bull; To focus on persistent improvement in processes related to teaching, learning and 
+                evaluation and to promote a culture of research and development among staff and students.</li>
+            <li>&bull; To develop technical and interpersonal skills so that the students translate 
+                knowledge into action contributing to the benefit of the society.</li>
+            <li>&bull; To enhance the learning experience of students by honing versatility through diverse activities.</li>
+        </ul>
+      </div>
+   </div>
+  </div>
+
+</div>
+</div>
+
+<div class="footer">
+  <div class="footext">
+    Connect With Us:
+   </div>
+  <div class="social">
+  <ul>
+    <li class="fa" align="center" id="Instagram"><a class="ref" href="https://www.instagram.com/kjsieit_official/">&nbsp;</a></li>
+    <li class="fa" align="center" id="Facebook"><a class="ref" href="https://www.facebook.com/kjsieitofficial">&nbsp;</a></li>
+    <li class="fa" align="center" id="Twitter"><a class="ref" href="https://twitter.com/kjsieit1">&nbsp;</a></li>
+    <li class="fa" align="center" id="Linkedin"><a class="ref" href="https://www.linkedin.com/school/kjsomaiya-institute-of-engineering-and-information-technology/">&nbsp;</a></li>
+    <li class="fa" align="center" id="Youtube"><a class="ref" href="https://www.youtube.com/kjsieitofficial">&nbsp;</a></li>
+  </ul>
+</div>
+<div class="footer2">
+  <div>Guided By Payal -------</div>
+  <div>Developed By: Yatharth Wazir, Parth Shah, Tanisha Kaur, Siddhanth Shah</div>
+</div>
+</div>
+
+
+
+</body>
+
+<script>
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
+</script>
+</html>
+{% endblock %}

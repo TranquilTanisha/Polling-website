@@ -1,0 +1,25 @@
+<html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'vote/css/navbar.css' %}">
+
+<body>
+    <nav>
+        <div class="bg"></div>
+        <div class="above">
+            <label class="logo">KJSIEIT</label>
+            <ul>
+                <li class="element" align="center" id="Home"><a class="ref" href="{% url '' %}">Home</a>
+                </li>
+                <li class="element" align="center"><a class="ref" href="{% url 'view-polls' %}">View Polls</a></li>
+                <!-- <li class="element" align="center"><a class="ref" href="#">Feedback</a></li> -->
+                <li class="element" id="Login" align="center"><a class="ref" href="{% url 'login' %}">Login</a></li>
+                <li class="element" align="center"><a class="ref" href="{% url 'check-div' %}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+{% block content %}
+
+{% endblock %}
+
+</html>

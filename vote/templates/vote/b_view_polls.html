@@ -1,0 +1,24 @@
+{% extends "vote/b_navbar.html" %}
+
+{% block content %}
+<h1> Kindly vote for the Class Representative of your Class</h1>
+<br>
+<br>
+
+<table>
+    <tr>
+        
+        <th>NAME</th>
+        <th></th>
+    </tr>
+    {% for candidate in candidates %}
+    <tr>
+        
+        <td>{{candidate.name}}</td>
+        <td>Vote</td>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

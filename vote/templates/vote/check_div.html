@@ -1,0 +1,13 @@
+{% extends "vote/navbar.html" %}
+
+{% block content %}
+
+<h1>SELECT YOUR RESPECTIVE DIVISION</h1>
+<hr>
+<br>
+<body>
+<a href="{% url 'register-user-A' %}">COMPS A</a>
+<a href="{% url 'register-user-B' %}">COMPS B</a>
+</body>
+
+{% endblock %}

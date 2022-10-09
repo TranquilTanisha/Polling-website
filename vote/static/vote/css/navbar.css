@@ -1,0 +1,96 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+body {
+  font-family: Verdana;
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-color: aliceblue;
+}
+nav {
+  height: 100px;
+  width: 100%;
+  background: rgba(3, 17, 57, 0);
+  border: 5px;
+  border-color: brown;
+  margin-bottom: 50px;
+  z-index: 0;
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-family: Aboreto;
+  font-weight: bold;
+  color: white;
+  padding: 0 40px;
+  line-height: 100px;
+}
+nav ul {
+  float: right;
+  margin-right: 10px;
+  text-align: center;
+}
+.element {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 0 0 0;
+  line-height: 100px;
+  min-width: 110px;
+  border-radius: 15px;
+}
+.ref {
+  color: white;
+  font-size: 15px;
+  padding: 0 10px;
+}
+.element:hover .ref {
+  color: rgb(255, 196, 0);
+  transform: translateY(-2px) scale(100.2%);
+  opacity: 1;
+  transition: ease-out 0.25s;
+}
+.element:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  z-index: 10;
+  transition: 0.2s;
+}
+nav #icon {
+  color: white;
+  font-size: 30px;
+  line-height: 80px;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+.temp2 {
+  width: 100px;
+  line-height: 100px;
+  font-size: 16px;
+  height: 100px;
+  border-radius: 100%;
+  background: rgb(0, 166, 255);
+  transition: width 1.3s, line-height 1.3s, font-size 1.3s, height 1.3s,
+  transform ease-in-out 2s;
+}
+
+.temp2:hover {
+  width: 250px;
+  font-size: 40px;
+  line-height: 250px;
+  height: 250px;
+  transform: rotate(1440deg);
+}
+
+
+sections {
+  background: url(vote.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 100px);
+}
+
