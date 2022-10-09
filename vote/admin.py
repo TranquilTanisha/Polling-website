@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import ADivCandidate, BDivCandidate, ADivRegistration, BDivRegistration
+from .models import ADivPoll, BDivPoll, ADivRegistration, BDivRegistration
 
-admin.site.register(ADivCandidate)
-admin.site.register(BDivCandidate)
+admin.site.register(ADivPoll)
+admin.site.register(BDivPoll)
 admin.site.register(ADivRegistration)
 admin.site.register(BDivRegistration)

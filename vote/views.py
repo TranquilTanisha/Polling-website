@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
-
-from .models import ADivCandidate, BDivCandidate
+from django.http import HttpResponse,request
+from .models import ADivPoll, BDivPoll
 from .forms import ADivRegistrationForm, BDivRegistrationForm
 
 def home(request):
@@ -47,12 +47,59 @@ def homeB(request):
     return render(request, "vote/b_home.html")
 
 def viewPollsA(request):
-    candidates=ADivCandidate.objects.all()
-    context={"candidates":candidates}
-    return render(request, "vote/view_polls.html",context)
+    polls = ADivPoll.objects.all()
+    context = {'polls': polls}
+    return render(request, "vote/a_view_polls.html",context)
 
 def viewPollsB(request):
-    candidates=BDivCandidate.objects.all()
-    context={"candidates":candidates}
-    return render(request, "vote/view_polls.html",context)
+    polls = BDivPoll.objects.all()
+    context = {'polls': polls}
+    return render(request, "vote/b_view_polls.html",context)
 
+def voteA(request,vote_id):
+    poll=ADivPoll.objects.get(pk=vote_id)
+    
+    if request.method=="POST":
+        selected_option = request.POST['poll']
+        if selected_option == 'option1':
+            poll.candidate_1_count += 1
+        elif selected_option == 'option2':
+            poll.candidate_2_count += 1
+        elif selected_option == 'option3':
+            poll.candidate_3_count += 1
+        else:
+            return HttpResponse(400, 'Invalid form')
+        
+        poll.save()
+        return redirect("result")
+    
+    context={"poll":poll}
+    return render(request, "vote/vote.html", context)
+
+def voteB(request,vote_id):
+    poll=BDivPoll.objects.get(pk=vote_id)
+    
+    if request.method=="POST":
+        selected_option = request.POST['poll']
+        if selected_option == 'option1':
+            poll.candidate_1_count += 1
+        elif selected_option == 'option2':
+            poll.candidate_2_count += 1
+        elif selected_option == 'option3':
+            poll.candidate_3_count += 1
+        else:
+            return HttpResponse(400, 'Invalid form')
+        
+        poll.save()
+        return redirect("result")
+    
+    context={"poll":poll}
+    return render(request, "vote/vote.html", context)
+
+def result(request):
+    pollA = ADivPoll.objects.all()
+    pollB = BDivPoll.objects.all()
+    #total_A=pollA.candidate_1_count+pollA.candidate_2_count+pollA.candidate_3_count
+    context = {'pollA':pollA, "pollB":pollB}
+    return render(request,'vote/result.html',context)
+    

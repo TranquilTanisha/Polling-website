@@ -1,0 +1,54 @@
+{% block title %}Results{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Poll Result</h2>
+            </div>
+
+            <h1>DIVISION A</h1>
+
+            {% for poll in pollA %}
+
+            <div class="panel-body">
+                <h3>{{ poll.Elections_for }}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{ poll.candidate_1 }} &mdash; <strong>{{ poll.candidate_1_count }}</strong></li>
+                <li class="list-group-item">{{ poll.candidate_2 }} &mdash; <strong>{{ poll.candidate_2_count }}</strong></li>
+                <li class="list-group-item">{{ poll.candidate_3 }} &mdash; <strong>{{ poll.candidate_3_count }}</strong></li>
+            </ul>
+
+            <div class="panel-footer">
+                Total &mdash; <strong>{{ poll.total }}</strong>
+            </div>
+
+            {% endfor %}
+
+            <h1>DIVISION B</h1>
+
+            {% for poll in pollB %}
+
+            <div class="panel-body">
+                <h3>{{ poll.Elections_for }}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{ poll.candidate_1 }} &mdash; <strong>{{ poll.candidate_1_count }}</strong></li>
+                <li class="list-group-item">{{ poll.candidate_2 }} &mdash; <strong>{{ poll.candidate_2_count }}</strong></li>
+                <li class="list-group-item">{{ poll.candidate_3 }} &mdash; <strong>{{ poll.candidate_3_count }}</strong></li>
+            </ul>
+
+            <div class="panel-footer">
+                Total &mdash; <strong>{{ poll.total }}</strong>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

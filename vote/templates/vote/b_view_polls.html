@@ -1,24 +1,10 @@
 {% extends "vote/b_navbar.html" %}
 
-{% block content %}
-<h1> Kindly vote for the Class Representative of your Class</h1>
-<br>
-<br>
+{% block content%}
 
-<table>
-    <tr>
-        
-        <th>NAME</th>
-        <th></th>
-    </tr>
-    {% for candidate in candidates %}
-    <tr>
-        
-        <td>{{candidate.name}}</td>
-        <td>Vote</td>
-    {% endfor %}
-</table>
-
-
+{% for poll in polls %}
+    <p>{{poll.Elections_for}}</p>
+    <a href="{% url 'b-vote' forloop.counter %}">Vote</a>
+{% endfor %}    
 
 {% endblock %}

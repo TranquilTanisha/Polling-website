@@ -13,4 +13,7 @@ urlpatterns = [
     path('b-home/', views.homeB, name='b-home'),
     path('a-view-polls/', views.viewPollsA, name='a-view-polls'),
     path('b-view-polls/', views.viewPollsB, name='b-view-polls'),
+    path('a-vote/<int:vote_id>/', views.voteA, name='a-vote'),
+    path('b-vote/<int:vote_id>/', views.voteB, name='b-vote'),
+    path('result/',views.result, name='result'),
 ]
