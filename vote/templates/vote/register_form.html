@@ -1,14 +1,33 @@
-{% extends "vote/navbar.html" %}
-
+{% extends 'vote/navbar.html' %}
 {% block content %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/register-form.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Digital Voting System</title>
+</head>
+<body>
+<div class="card">
 <h1>Register</h1>
 
-<form action="" method="POST">
+<form class="list" action="" method="POST">
     {% csrf_token %}
     
     {{form.as_p}}
     <input type="submit">
     
 </form>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
+</script>
 {% endblock %}

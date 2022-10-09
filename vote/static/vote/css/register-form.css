@@ -1,0 +1,33 @@
+body {
+    background: url(/static/images/Navbar.png) no-repeat,
+      url(/static/images/WBG.jpg);
+    background-size: auto;
+    transition: background 2.2s;
+    overflow-x: hidden;
+}
+.go body {
+    background: url(/static/images/Navbar.png) no-repeat,
+      url(/static/images/Navbarb.png) no-repeat, url(/static/images/WBG.jpg);
+    background-size: auto;
+}
+
+.card{
+    margin: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 50px;
+}
+
+h1{
+    font-size: 3rem;
+    color: rgb(0, 0, 64);
+    text-align: center;
+    padding: 1rem;
+}
+
+.list{
+    color: rgb(0, 0, 45);
+    padding: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+}

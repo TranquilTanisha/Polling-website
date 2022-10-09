@@ -1,89 +1,49 @@
-{% block title %}Vote{% endblock %}
-
-{% block main %}
-
-<style>
-    .navbar-default, .btn, .form-control, .panel {
-        border-radius: 0;
-    }
-    .navbar-default {
-        background-color: rgba(34, 4, 103, 0.7);
-        border-color: rgba(245, 245, 220, .6);
-        box-shadow: 0px 3px 3px 0px rgb(3, 0, 29);
-    }
-    .navbar-default .navbar-nav>.active>a, 
-    .navbar-default .navbar-nav>.active>a:focus, 
-    .navbar-default .navbar-nav>.active>a:hover {
-        background-color: rgba(245, 245, 220, .9);
-        border-bottom: 4px solid #ddd;
-    }
-    .panel-default > .panel-heading {
-        color: #333;
-        background-color: rgba(245, 245, 220, .7);
-        border-color: rgba(245, 245, 220, .6);
-        border-top-left-radius: 0;
-        border-top-right-radius: 0; 
-    }
-    .panel-footer {
-        background-color: rgba(245, 245, 220, .5);
-        border-color: rgba(245, 245, 220, .4);
-    }
-    .panel {
-        box-shadow: 0px 3px 3px 0px #ddd;
-    }
-    a.navbar-brand, .panel-title {
-        font-weight: bolder;
-    }
-</style>
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Cast Your Vote</h3>
-            </div>
+{% extends 'vote/navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/evote.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Digital Voting System</title>
+</head>
+<body>
+        <div class="panel">
+            <div class="panel-heading"><h1>Cast Your Vote</h1></div>
             
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
+                    <div class="title">
                         <h2>{{poll.Elections_for}}</h2>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <hr />
-
-                        <form method="POST">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label>
-                                        {{poll.candidate_1}}
-                                        <input type="radio" name="poll" value="option1" required>
+                        <hr>
+                    <form method="POST">
+                         {% csrf_token %}
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>{{poll.candidate_1}}<input type="radio" name="poll" value="option1" required>
                                     </label> &nbsp;
-                                    <label>
-                                        {{poll.candidate_2}}
-                                        <input type="radio" name="poll" value="option2">
+                                <label>{{poll.candidate_2}}<input type="radio" name="poll" value="option2">
                                     </label> &nbsp;
-                                    <label>
-                                        {{poll.candidate_3}}
-                                        <input type="radio" name="poll" value="option3">
+                                <label>{{poll.candidate_3}}<input type="radio" name="poll" value="option3">
                                     </label> &nbsp;
-                                </div>
                             </div>
-                            
-                            <hr />
-
-                            <button type="submit" class="btn btn-info">
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                        </div>
+                        <button type="submit" class="btn">
+                            Submit
+                        </button>
+                    </form>
             </div>
-
         </div>
-    </div>
-</div>
+</body>
+<script>
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
+</script>
+</html>
 {% endblock %}

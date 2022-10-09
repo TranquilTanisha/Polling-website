@@ -1,0 +1,43 @@
+body {
+    background: url(/static/images/Navbar.png) no-repeat,
+      url(/static/images/WBG.jpg);
+    background-size: auto;
+    transition: background 2.2s;
+    overflow-x: hidden;
+}
+.go body {
+    background: url(/static/images/Navbar.png) no-repeat,
+      url(/static/images/Navbarb.png) no-repeat, url(/static/images/WBG.jpg);
+    background-size: auto;
+}
+.card{
+    border-radius: 50px;
+    background-color: white;
+    margin: 2rem;
+    padding: 2rem;
+}
+.head{
+  padding: 2rem;
+ text-align: center;
+}
+.actions{
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.link{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 2rem;
+  color: white;
+  background-color: rgb(0, 0, 80);
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.link:hover{
+  color: rgb(255, 196, 0);
+}

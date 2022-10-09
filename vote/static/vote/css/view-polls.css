@@ -1,0 +1,79 @@
+body {
+  background: url(/static/images/Navbar.png) no-repeat,
+    url(/static/images/WBG.jpg);
+  background-size: auto;
+  transition: background 2.2s;
+  overflow-x: hidden;
+}
+.go body {
+  background: url(/static/images/Navbar.png) no-repeat,
+    url(/static/images/Navbarb.png) no-repeat, url(/static/images/WBG.jpg);
+  background-size: auto;
+}
+
+.card{
+  margin: 3rem;
+  padding: 0 5rem 0 5rem;
+  opacity: 0;
+  transition: all 2.2s;
+}
+.go .card{
+  padding: 5rem;
+  opacity: 1;
+}
+
+.head{
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin: 1rem;
+}
+
+.poll-list{
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+.poll-item{
+  margin: 1rem;
+}
+.poll-title{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgb(1, 2, 58);
+  padding: 2rem 2rem 0.5rem 2rem;
+  border-bottom: 2px solid rgb(45, 45, 45);
+  border-radius: 50px 50px 0 0;
+
+}
+.poll-title:hover{
+  transform: translateY(-1px);
+}
+
+.actions{
+  font-size: 1rem;
+  text-align: right;
+  padding: 1.5rem 1rem 0.5rem 1rem;
+}
+.links{
+  color: rgb(255,255,255);
+  background-color: rgb(3, 3, 68);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.links:hover{
+  color: rgb(255, 208, 0);
+}
+.poll-card{
+  padding: 1rem;
+  border-radius: 40px;
+  background-color: white;
+  margin: 1rem;
+}
+
+
+
+

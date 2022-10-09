@@ -1,54 +1,91 @@
-{% block title %}Results{% endblock %}
-
-{% block main %}
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title">Poll Result</h2>
-            </div>
-
-            <h1>DIVISION A</h1>
-
-            {% for poll in pollA %}
-
-            <div class="panel-body">
-                <h3>{{ poll.Elections_for }}</h3>
-            </div>
-
+{% extends 'vote/navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/results.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <title>Digital Voting System</title>
+</head>
+<body>
+<div class="panel">
+    <div class="panel-heading"><h1>Poll Result</h1></div>
+    <div class="panel-body">
+        <div class="Div">
+        <h2>Division A</h2>
+        {% for poll in pollA %}
+        <div class="title">
+            <h2>{{ poll.Elections_for }}</h2>
+        </div>
+        <div class="list">
             <ul class="list-group">
-                <li class="list-group-item">{{ poll.candidate_1 }} &mdash; <strong>{{ poll.candidate_1_count }}</strong></li>
-                <li class="list-group-item">{{ poll.candidate_2 }} &mdash; <strong>{{ poll.candidate_2_count }}</strong></li>
-                <li class="list-group-item">{{ poll.candidate_3 }} &mdash; <strong>{{ poll.candidate_3_count }}</strong></li>
+                <li class="list-item">{{ poll.candidate_1 }} &mdash; {{ poll.candidate_1_count }} 
+                    {% if poll.candidate_1_count > poll.candidate_2_count and poll.candidate_1_count > poll.candidate_3_count %}
+                    <strong>&nbsp;Current Leader ^-^</strong>    
+                    {% endif %}
+                </li>
+                <li class="list-item">{{ poll.candidate_2 }} &mdash; {{ poll.candidate_2_count }}
+                    {% if poll.candidate_2_count > poll.candidate_1_count and poll.candidate_2_count > poll.candidate_3_count %}
+                    <strong>&nbsp;Current Leader ^-^</strong>
+                    {% endif %}
+                </li>
+                <li class="list-item">{{ poll.candidate_3 }} &mdash; {{ poll.candidate_3_count }}
+                    {% if poll.candidate_3_count > poll.candidate_1_count and poll.candidate_3_count > poll.candidate_2_count %}
+                    <strong>&nbsp;Current Leader ^-^</strong>
+                    {% endif %}
+                </li>
             </ul>
+        </div>
 
-            <div class="panel-footer">
-                Total &mdash; <strong>{{ poll.total }}</strong>
-            </div>
+        <div class="panel-footer">
+            Total &mdash;{{ poll.total }}
+        </div>
+        {% endfor %}
+        </div>
 
-            {% endfor %}
-
-            <h1>DIVISION B</h1>
-
-            {% for poll in pollB %}
-
-            <div class="panel-body">
-                <h3>{{ poll.Elections_for }}</h3>
-            </div>
-
+        <div class="Div"><h2>Division B</h2>
+        {% for poll in pollB %}
+        <div class="title">
+            <h2>{{ poll.Elections_for }}</h2>
+        </div>
+        <div class="list">
             <ul class="list-group">
-                <li class="list-group-item">{{ poll.candidate_1 }} &mdash; <strong>{{ poll.candidate_1_count }}</strong></li>
-                <li class="list-group-item">{{ poll.candidate_2 }} &mdash; <strong>{{ poll.candidate_2_count }}</strong></li>
-                <li class="list-group-item">{{ poll.candidate_3 }} &mdash; <strong>{{ poll.candidate_3_count }}</strong></li>
+                <li class="list-item">{{ poll.candidate_1 }} &mdash; {{ poll.candidate_1_count }} 
+                    {% if poll.candidate_1_count > poll.candidate_2_count and poll.candidate_1_count > poll.candidate_3_count %}
+                    <strong>&nbsp;Current Leader ^-^</strong>    
+                    {% endif %}
+                </li>
+                <li class="list-item">{{ poll.candidate_2 }} &mdash; {{ poll.candidate_2_count }}
+                    {% if poll.candidate_2_count > poll.candidate_1_count and poll.candidate_2_count > poll.candidate_3_count %}
+                    <strong>&nbsp;Current Leader ^-^</strong>
+                    {% endif %}
+                </li>
+                <li class="list-item">{{ poll.candidate_3 }} &mdash; {{ poll.candidate_3_count }}
+                    {% if poll.candidate_3_count > poll.candidate_1_count and poll.candidate_3_count > poll.candidate_2_count %}
+                    <strong>&nbsp;Current Leader ^-^</strong>
+                    {% endif %}
+                </li>
             </ul>
+        </div>
 
-            <div class="panel-footer">
-                Total &mdash; <strong>{{ poll.total }}</strong>
-            </div>
-
-            {% endfor %}
-
+        <div class="panel-footer">
+            Total &mdash;{{ poll.total }}
+        </div>
+        {% endfor %}
         </div>
     </div>
 </div>
+</body>
+<script>
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
+</script>
+</html>
 {% endblock %}

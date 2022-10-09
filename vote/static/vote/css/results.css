@@ -1,0 +1,47 @@
+body {
+    background: url(/static/images/Navbar.png) no-repeat,
+    url(/static/images/WBG.jpg);
+    background-size: auto;
+    transition: background 2.2s;
+    overflow-x: hidden;
+}
+.go body {
+    background: url(/static/images/Navbar.png) no-repeat,
+      url(/static/images/Navbarb.png) no-repeat, url(/static/images/WBG.jpg);
+    background-size: auto;
+}
+.panel{
+  margin: 2rem;
+  padding: 3rem;
+}
+.panel-heading{
+  font-size: 2rem;
+  padding-left: 4rem;
+  color: rgb(255, 255, 255);
+}
+.title{
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+  color: rgb(0, 0, 54);
+}
+.list{
+  border-bottom: 1px solid black;
+}
+.list-item{
+  font-size: 1.2rem;
+  padding: 1rem;
+  color: rgb(0, 0, 54);
+}
+.panel-footer{
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+.Div{
+  background-color: white;
+  border-radius: 40px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 3rem;
+}

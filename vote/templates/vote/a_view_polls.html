@@ -1,10 +1,44 @@
 {% extends "vote/a_navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/view-polls.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <title>Digital Voting System</title>
+</head>
+<body>
+<div class="card">
+    <div class="panel-heading"><h1 class="head">Available Polls</h1></div>
+        <div class="pollbox">     
+            <ul class="poll-list">
+                {% for poll in polls %}
+                <div class="poll-card">
+                <li class="poll-item">
+                    <div class="poll-title">{{ poll.Elections_for }}</div>
+                    <div class="actions">
+                        <a class="links" href="{% url 'a-vote' forloop.counter %}" class="vote">Cast Vote</a> &nbsp;
+                    </div>
+                </li>
+                </div>
+                {% endfor %}
+            </ul>
 
-{% block content%}
+        </div>
+</div>
+</body>
 
-{% for poll in polls %}
-    <p>{{poll.Elections_for}}</p>
-    <a href="{% url 'a-vote' forloop.counter %}">Vote</a>
-{% endfor %}    
+<script>
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
+</script>
 
+</html>
 {% endblock %}
