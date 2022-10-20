@@ -25,11 +25,11 @@
                          {% csrf_token %}
                         <div class="form-group">
                             <div class="radio">
-                                <label>{{poll.candidate_1}}<input type="radio" name="poll" value="option1" required>
+                                <label><input type="radio" name="poll" value="option1" required>{{poll.candidate_1}}
                                     </label> &nbsp;
-                                <label>{{poll.candidate_2}}<input type="radio" name="poll" value="option2">
+                                <label><input type="radio" name="poll" value="option2" required>{{poll.candidate_2}}
                                     </label> &nbsp;
-                                <label>{{poll.candidate_3}}<input type="radio" name="poll" value="option3">
+                                <label><input type="radio" name="poll" value="option3" required>{{poll.candidate_3}}
                                     </label> &nbsp;
                             </div>
                         </div>

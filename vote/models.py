@@ -19,12 +19,12 @@ class ADivPoll(models.Model):
         return self.candidate_1_count + self.candidate_2_count + self.candidate_3_count
     
 class ADivRegistration(models.Model):
-    name=models.CharField(max_length=200, null=True, blank=True)
+    name=models.CharField(max_length=200, null=True)
     email_id=models.CharField(max_length=50, null=True)
     BRANCH_TYPE=(
         ("A", "COMPS A"),
     )
-    password=models.CharField(max_length=20, null=True, blank=True)
+    password=models.CharField(max_length=20, null=True)
     #div=models.CharField(max_length=2, choices=BRANCH_TYPE, null=True, blank=True)
     
     def __str__(self):
