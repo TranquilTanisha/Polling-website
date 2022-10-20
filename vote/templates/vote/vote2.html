@@ -23,9 +23,10 @@
                         <hr>
                         <form method="POST">
                             {% csrf_token %}
-                            <div class="polls"> <input type="radio" name="select" id="option1" checked>
-                             <input type="radio" name="select" id="option2">
-                             <input type="radio" name="select" id="option3">
+                            <div class="polls"> 
+                             <input type="radio" name="poll" id="option1" required>
+                             <input type="radio" name="poll" id="option2" required>
+                             <input type="radio" name="poll" id="option3"required>
                              <label for="option1" class="option option1">
                              <div class="dot"></div>
                              <span>{{poll.candidate_1}}</span>

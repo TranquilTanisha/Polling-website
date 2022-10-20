@@ -25,7 +25,6 @@ class ADivRegistration(models.Model):
         ("A", "COMPS A"),
     )
     password=models.CharField(max_length=20, null=True)
-    #div=models.CharField(max_length=2, choices=BRANCH_TYPE, null=True, blank=True)
     
     def __str__(self):
         return self.name
@@ -53,7 +52,6 @@ class BDivRegistration(models.Model):
         ("B", "COMPS B"),
     )
     password=models.CharField(max_length=20, null=True,blank=True)
-    #div=models.CharField(max_length=2, choices=BRANCH_TYPE, null=True,blank=True)
     
     def __str__(self):
         return self.name
