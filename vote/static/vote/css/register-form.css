@@ -4,6 +4,7 @@ body {
     background-size: auto;
     transition: background 2.2s;
     overflow-x: hidden;
+    align-items: center;
 }
 .go body {
     background: url(/static/images/Navbar.png) no-repeat,
@@ -12,14 +13,27 @@ body {
 }
 
 .card{
-    margin: 2rem;
-    padding: 2rem;
+    margin: 0 auto;
     background-color: white;
-    border-radius: 50px;
+    padding: 0 6rem;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 1.2s;
 }
 
-h1{
-    font-size: 3rem;
+.go .card{
+    padding: 5rem 7rem;
+    border-radius: 50px;
+    width: fit-content;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 2.5rem;
     color: rgb(0, 0, 64);
     text-align: center;
     padding: 1rem;
@@ -30,4 +44,32 @@ h1{
     padding: 1rem;
     line-height: 2rem;
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    line-height: 1.4rem;
+    padding-left: 0.5rem;
+}
+
+#sub{
+    margin-top: 1rem;
+    background-color: #030051;
+    color: white;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+#sub:hover{
+    margin-top: 1rem;
+    background-color: #030051;
+    color: rgb(255, 205, 40);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    transform: scale(1.005);
+    transition: all 0.4s;
 }

@@ -1,0 +1,56 @@
+{% extends 'vote/navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/final.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Digital Voting System</title>
+</head>
+<body>
+        <div class="panel">
+            <div class="panel-heading"><h1>Cast Your Vote</h1></div>
+            
+            <div class="panel-body">
+                    <div class="title">
+                        <h2>{{poll.Elections_for}}</h2>
+                    </div>
+                        <hr>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="polls"> <input type="radio" name="select" id="option1" checked>
+                             <input type="radio" name="select" id="option2">
+                             <input type="radio" name="select" id="option3">
+                             <label for="option1" class="option option1">
+                             <div class="dot"></div>
+                             <span>{{poll.candidate_1}}</span>
+                             </label> 
+                             <label for="option2" class="option option2">
+                             <div class="dot"></div>
+                             <span>{{poll.candidate_2}}</span>
+                             </label> 
+                             <label for="option3" class="option option3">
+                             <div class="dot"></div>
+                             <span>{{poll.candidate_3}}</span>
+                             </label> </div>
+                            <div class="b"> <button type="submit" class="btn btn1">
+                             Submit
+                         </button></div>
+                         </form>
+               </div>
+               </div>
+               </body>
+                    
+   
+<script>
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
+</script>
+</html>
+{% endblock %}
