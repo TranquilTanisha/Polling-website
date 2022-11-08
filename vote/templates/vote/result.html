@@ -23,28 +23,50 @@
         <div class="title">
             <h2>{{ poll.Elections_for }}</h2>
         </div>
+        
         <div class="list">
             <ul class="list-group">
-                <li class="list-item">{{ poll.candidate_1 }} &mdash; {{ poll.candidate_1_count }} 
-                    {% if poll.candidate_1_count > poll.candidate_2_count and poll.candidate_1_count > poll.candidate_3_count %}
-                    <strong>&nbsp;Current Leader ^-^</strong>    
-                    {% endif %}
-                </li>
-                <li class="list-item">{{ poll.candidate_2 }} &mdash; {{ poll.candidate_2_count }}
-                    {% if poll.candidate_2_count > poll.candidate_1_count and poll.candidate_2_count > poll.candidate_3_count %}
-                    <strong>&nbsp;Current Leader ^-^</strong>
-                    {% endif %}
-                </li>
-                <li class="list-item">{{ poll.candidate_3 }} &mdash; {{ poll.candidate_3_count }}
-                    {% if poll.candidate_3_count > poll.candidate_1_count and poll.candidate_3_count > poll.candidate_2_count %}
-                    <strong>&nbsp;Current Leader ^-^</strong>
-                    {% endif %}
-                </li>
+                <table>
+                    <tr>
+                        <th>Name of the Candidate</th>
+                        <th></th>
+                        <th>Percentage of votes</th>
+                    </tr>
+                    <tr>
+                        <td>{{ poll.candidate_1 }}</td>
+                        <td>----</td>
+                        <td>{{ poll.percentage_candidate_1}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{poll.candidate_2}}</td>
+                        <td>----</td>
+                        <td>{{poll.percentage_candidate_2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{poll.candidate_3}}</td>
+                        <td>----</td>
+                        <td>{{poll.percentage_candidate_3}}</td>
+                    </tr>
+                </table>                
             </ul>
         </div>
 
         <div class="panel-footer">
-            Total &mdash;{{ poll.total }}
+            {% if poll.percentage_candidate_1 > poll.percentage_candidate_2 and poll.percentage_candidate_1 > poll.percentage_candidate_3 %}
+                <p>Winner: {{poll.candidate_1}}</p>
+            {% elif poll.percentage_candidate_2 > poll.percentage_candidate_1 and poll.percentage_candidate_2 > poll.percentage_candidate_3 %}
+                <p>Winner: {{poll.candidate_2}}</p>
+            {% elif poll.percentage_candidate_3 > poll.percentage_candidate_1 and poll.percentage_candidate_3 > poll.percentage_candidate_2 %}
+                <p>Winner: {{poll.candidate_3}}</p>
+            {% elif poll.percentage_candidate_1 == poll.percentage_candidate_2 and poll.percentage_candidate_1 > poll.percentage_candidate_3%}
+                <p>Tie between {{poll.candidate_1}} and {{poll.candidate_2}}</p>
+            {% elif poll.percentage_candidate_1 == poll.percentage_candidate_3 and poll.percentage_candidate_1 > poll.percentage_candidate_2 %}
+                <p>Tie between: {{poll.candidate_1}} and {{poll.candidate_3}}</p>
+            {% elif poll.percentage_candidate_2 == poll.percentage_candidate_3 and poll.percentage_candidate_2 > poll.percentage_candidate_1 %}
+                <p>Tie between: {{poll.candidate_2}} and {{poll.candidate_3}}</p>
+            {% else %}
+                <p>All have the same number of votes</h2>
+            {% endif %}
         </div>
         {% endfor %}
         </div>
@@ -56,26 +78,47 @@
         </div>
         <div class="list">
             <ul class="list-group">
-                <li class="list-item">{{ poll.candidate_1 }} &mdash; {{ poll.candidate_1_count }} 
-                    {% if poll.candidate_1_count > poll.candidate_2_count and poll.candidate_1_count > poll.candidate_3_count %}
-                    <strong>&nbsp;Current Leader ^-^</strong>    
-                    {% endif %}
-                </li>
-                <li class="list-item">{{ poll.candidate_2 }} &mdash; {{ poll.candidate_2_count }}
-                    {% if poll.candidate_2_count > poll.candidate_1_count and poll.candidate_2_count > poll.candidate_3_count %}
-                    <strong>&nbsp;Current Leader ^-^</strong>
-                    {% endif %}
-                </li>
-                <li class="list-item">{{ poll.candidate_3 }} &mdash; {{ poll.candidate_3_count }}
-                    {% if poll.candidate_3_count > poll.candidate_1_count and poll.candidate_3_count > poll.candidate_2_count %}
-                    <strong>&nbsp;Current Leader ^-^</strong>
-                    {% endif %}
-                </li>
+                <table>
+                    <tr>
+                        <th>Name of the Candidate</th>
+                        <th></th>
+                        <th>Percentage of votes</th>
+                    </tr>
+                    <tr>
+                        <td>{{ poll.candidate_1 }}</td>
+                        <td>----</td>
+                        <td>{{poll.percentage_candidate_1}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{poll.candidate_2}}</td>
+                        <td>----</td>
+                        <td>{{poll.percentage_candidate_2}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{poll.candidate_3}}</td>
+                        <td>----</td>
+                        <td>{{poll.percentage_candidate_3}}</td>
+                    </tr>
+                </table>                
             </ul>
         </div>
 
         <div class="panel-footer">
-            Total &mdash;{{ poll.total }}
+            {% if poll.percentage_candidate_1 > poll.percentage_candidate_2 and poll.percentage_candidate_1 > poll.percentage_candidate_3 %}
+                <p>Winner: {{poll.candidate_1}}</p>
+            {% elif poll.percentage_candidate_2 > poll.percentage_candidate_1 and poll.percentage_candidate_2 > poll.percentage_candidate_3 %}
+                <p>Winner: {{poll.candidate_2}}</p>
+            {% elif poll.percentage_candidate_3 > poll.percentage_candidate_1 and poll.percentage_candidate_3 > poll.percentage_candidate_2 %}
+                <p>Winner: {{poll.candidate_3}}</p>
+            {% elif poll.percentage_candidate_1 == poll.percentage_candidate_2 and poll.percentage_candidate_1 > poll.percentage_candidate_3%}
+                <p>Tie between {{poll.candidate_1}} and {{poll.candidate_2}}</p>
+            {% elif poll.percentage_candidate_1 == poll.percentage_candidate_3 and poll.percentage_candidate_1 > poll.percentage_candidate_2 %}
+                <p>Tie between: {{poll.candidate_1}} and {{poll.candidate_3}}</p>
+            {% elif poll.percentage_candidate_2 == poll.percentage_candidate_3 and poll.percentage_candidate_2 > poll.percentage_candidate_1 %}
+                <p>Tie between: {{poll.candidate_2}} and {{poll.candidate_3}}</p>
+            {% else %}
+                <p>All have the same number of votes</h2>
+            {% endif %}
         </div>
         {% endfor %}
         </div>

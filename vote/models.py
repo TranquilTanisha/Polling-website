@@ -10,6 +10,7 @@ class ADivPoll(models.Model):
     candidate_1_count = models.IntegerField(default=0)
     candidate_2_count = models.IntegerField(default=0)
     candidate_3_count = models.IntegerField(default=0)
+    
     #id=models.UUIDField(default=uuid.uuid1, unique=True, primary_key=True, editable=False)
     
     def __str__(self):
@@ -17,6 +18,15 @@ class ADivPoll(models.Model):
     
     def total(self):
         return self.candidate_1_count + self.candidate_2_count + self.candidate_3_count
+
+    def percentage_candidate_1(self):
+        return round((self.candidate_1_count / self.total()) * 100,2)
+
+    def percentage_candidate_2(self):
+        return round((self.candidate_2_count / self.total()) * 100,2)
+
+    def percentage_candidate_3(self):
+        return round((self.candidate_3_count / self.total()) * 100,2)
     
 class ADivRegistration(models.Model):
     name=models.CharField(max_length=200, null=True)
@@ -44,6 +54,15 @@ class BDivPoll(models.Model):
     
     def total(self):
         return self.candidate_1_count + self.candidate_2_count + self.candidate_3_count
+
+    def percentage_candidate_1(self):
+        return round((self.candidate_1_count / self.total()) * 100,2)
+
+    def percentage_candidate_2(self):
+        return round((self.candidate_2_count / self.total()) * 100,2)
+
+    def percentage_candidate_3(self):
+        return round((self.candidate_3_count / self.total()) * 100,2)
     
 class BDivRegistration(models.Model):
     name=models.CharField(max_length=200, null=True, blank=True)
