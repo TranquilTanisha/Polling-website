@@ -20,13 +20,22 @@ class ADivPoll(models.Model):
         return self.candidate_1_count + self.candidate_2_count + self.candidate_3_count
 
     def percentage_candidate_1(self):
-        return round((self.candidate_1_count / self.total()) * 100,2)
+        if self.total()==0:
+            return 0
+        else:
+            return round((self.candidate_1_count / self.total()) * 100,2)
 
     def percentage_candidate_2(self):
-        return round((self.candidate_2_count / self.total()) * 100,2)
+        if self.total()==0:
+            return 0
+        else:
+            return round((self.candidate_2_count / self.total()) * 100,2)
 
     def percentage_candidate_3(self):
-        return round((self.candidate_3_count / self.total()) * 100,2)
+        if self.total()==0:
+            return 0
+        else:
+            return round((self.candidate_3_count / self.total()) * 100,2)
     
 class ADivRegistration(models.Model):
     name=models.CharField(max_length=200, null=True)
@@ -56,13 +65,22 @@ class BDivPoll(models.Model):
         return self.candidate_1_count + self.candidate_2_count + self.candidate_3_count
 
     def percentage_candidate_1(self):
-        return round((self.candidate_1_count / self.total()) * 100,2)
+        if self.total()==0:
+            return 0
+        else:
+            return round((self.candidate_1_count / self.total()) * 100,2)
 
     def percentage_candidate_2(self):
-        return round((self.candidate_2_count / self.total()) * 100,2)
+        if self.total()==0:
+            return 0
+        else:
+            return round((self.candidate_2_count / self.total()) * 100,2)
 
     def percentage_candidate_3(self):
-        return round((self.candidate_3_count / self.total()) * 100,2)
+        if self.total()==0:
+            return 0
+        else:
+            return round((self.candidate_3_count / self.total()) * 100,2)
     
 class BDivRegistration(models.Model):
     name=models.CharField(max_length=200, null=True, blank=True)
