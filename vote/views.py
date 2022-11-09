@@ -103,6 +103,16 @@ def result(request):
     context = {'pollA':pollA, "pollB":pollB}
     return render(request,'vote/result.html',context)
 
+def resultA(request):
+    pollA = ADivPoll.objects.all()
+    context = {'pollA':pollA,}
+    return render(request,'vote/result_a.html',context)
+
+def resultB(request):
+    pollB = ADivPoll.objects.all()
+    context = {'pollB':pollB,}
+    return render(request,'vote/result_b.html',context)
+
 def piechartA(request,pk):
     poll=ADivPoll.objects.get(id=pk)
     return render(request, "vote/piechart_a.html", {"poll":poll})

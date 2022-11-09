@@ -16,6 +16,8 @@ urlpatterns = [
     path('a-vote/<int:vote_id>/', views.voteA, name='a-vote'),
     path('b-vote/<int:vote_id>/', views.voteB, name='b-vote'),
     path('result/',views.result, name='result'),
+    path('result_a/',views.resultA, name='result-A'),
+    path('result_b/',views.resultB, name='result-B'),
     path('piechart_a/<str:pk>',views.piechartA, name='piechart-A'),
     path('piechart_b/<str:pk>',views.piechartB, name='piechart-B'),
 ]
