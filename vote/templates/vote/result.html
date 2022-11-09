@@ -31,21 +31,25 @@
                         <th>Name of the Candidate</th>
                         <th></th>
                         <th>Percentage of votes</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>{{ poll.candidate_1 }}</td>
                         <td>----</td>
                         <td>{{poll.percentage_candidate_1}}%</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_2}}</td>
                         <td>----</td>
                         <td>{{poll.percentage_candidate_2}}%</td>
+                        <td><a href="{% url 'piechart-A' poll.id %}">View Piechart</a></td>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_3}}</td>
                         <td>----</td>
                         <td>{{poll.percentage_candidate_3}}%</td>
+                        <td></td>
                     </tr>
                 </table>                
             </ul>
@@ -83,21 +87,25 @@
                         <th>Name of the Candidate</th>
                         <th></th>
                         <th>Percentage of votes</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_1}}</td>
                         <td>----</td>
                         <td>{{poll.percentage_candidate_1}}%</td>
+                        <td><a href="{% url 'piechart-B' poll.id %}">View Piechart</a></td>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_2}}</td>
                         <td>----</td>
                         <td>{{poll.percentage_candidate_2}}%</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_3}}</td>
                         <td>----</td>
                         <td>{{poll.percentage_candidate_3}}%</td>
+                        <td></td>
                     </tr>
                 </table>                
             </ul>

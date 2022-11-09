@@ -102,4 +102,12 @@ def result(request):
     #total_A=pollA.candidate_1_count+pollA.candidate_2_count+pollA.candidate_3_count
     context = {'pollA':pollA, "pollB":pollB}
     return render(request,'vote/result.html',context)
+
+def piechartA(request,pk):
+    poll=ADivPoll.objects.get(id=pk)
+    return render(request, "vote/piechart_a.html", {"poll":poll})
+
+def piechartB(request,pk):
+    poll=BDivPoll.objects.get(id=pk)
+    return render(request, "vote/piechart_b.html", {"poll":poll})
     

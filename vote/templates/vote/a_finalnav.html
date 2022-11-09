@@ -1,0 +1,40 @@
+<html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'vote/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'vote/css/footer.css' %}">
+
+<body>
+    <nav>
+        <div class="bg"></div>
+        <div class="above">
+            <label class="logo">KJSIEIT</label>
+            <ul>
+                <li class="element" align="center" id="Home"><a class="ref" href="{% url 'a-home' %}">Home</a></li>
+                <li class="element" align="center" id="View-Polls"><a class="ref" href="{% url 'a-view-polls' %}">View Polls</a></li>
+                <li class="element" align="center" id="Result"><a class="ref" href="{% url 'result' %}">View Result</a></li>   
+            </ul>
+        </div>
+    </nav>
+{% block content %}
+
+{% endblock %}
+<div class="footer">
+    <div class="footext">
+      Connect With Us:
+     </div>
+    <div class="social">
+    <ul>
+      <li class="fa" align="center" id="Instagram"><a class="ref" href="https://www.instagram.com/kjsieit_official/">&nbsp;</a></li>
+      <li class="fa" align="center" id="Facebook"><a class="ref" href="https://www.facebook.com/kjsieitofficial">&nbsp;</a></li>
+      <li class="fa" align="center" id="Twitter"><a class="ref" href="https://twitter.com/kjsieit1">&nbsp;</a></li>
+      <li class="fa" align="center" id="Linkedin"><a class="ref" href="https://www.linkedin.com/school/kjsomaiya-institute-of-engineering-and-information-technology/">&nbsp;</a></li>
+      <li class="fa" align="center" id="Youtube"><a class="ref" href="https://www.youtube.com/kjsieitofficial">&nbsp;</a></li>
+    </ul>
+  </div>
+  <div class="footer2">
+    <div>Guided By Payal -------</div>
+    <div>Developed By: Yatharth Wazir, Parth Shah, Tanisha Kaur, Siddhanth Shah</div>
+  </div>
+  </div>
+</body>
+</html>

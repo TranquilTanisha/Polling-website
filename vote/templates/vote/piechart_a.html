@@ -1,0 +1,49 @@
+{% extends "vote/a_finalnav.html" %}
+
+{% block content %}
+<h>A Division Poll</h>
+<h>Title:{{poll.Elections_for}}</h>
+<style>
+    div{
+    margin-bottom: 10rem;
+    margin-left: 35rem;
+    margin-top: 10rem;
+    width: 30%;
+    height: 50%;
+    }
+    </style>
+
+<h1> {{poll.Elections_for}}</h1>
+<div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const config={
+        type: "pie",
+        data:{
+            datasets:[{
+                data:[{{poll.percentage_candidate_1}},{{poll.percentage_candidate_2}},{{poll.percentage_candidate_3}}],
+                backgroundColor: ["cyan", "DodgerBlue", "aquamarine"]
+                
+            }],
+            labels:["{{poll.candidate_1}}","{{poll.candidate_2}}","{{poll.candidate_3}}"]
+        },
+        options:{
+            responsive:true
+        }
+    };
+  </script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+  {% endblock %}
+
+
+
+
