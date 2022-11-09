@@ -71,7 +71,7 @@ def voteA(request,vote_id):
             return HttpResponse(400, 'Invalid form')
         
         poll.save()
-        return redirect("result")
+        return redirect("result-A")
     
     context={"poll":poll}
     return render(request, "vote/vote.html", context)
@@ -91,7 +91,7 @@ def voteB(request,vote_id):
             return HttpResponse(400, 'Invalid form')
         
         poll.save()
-        return redirect("result")
+        return redirect("result-B")
     
     context={"poll":poll}
     return render(request, "vote/vote.html", context)
@@ -109,7 +109,7 @@ def resultA(request):
     return render(request,'vote/result_a.html',context)
 
 def resultB(request):
-    pollB = ADivPoll.objects.all()
+    pollB = BDivPoll.objects.all()
     context = {'pollB':pollB,}
     return render(request,'vote/result_b.html',context)
 
