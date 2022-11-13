@@ -10,7 +10,7 @@ class ADivPoll(models.Model):
     candidate_1_count = models.IntegerField(default=0)
     candidate_2_count = models.IntegerField(default=0)
     candidate_3_count = models.IntegerField(default=0)
-    #id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     
     def __str__(self):
         return self.Elections_for
@@ -55,7 +55,7 @@ class BDivPoll(models.Model):
     candidate_1_count = models.IntegerField(default=0)
     candidate_2_count = models.IntegerField(default=0)
     candidate_3_count = models.IntegerField(default=0)
-    #id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    id=models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     
     def __str__(self):
         return self.Elections_for

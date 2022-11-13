@@ -23,7 +23,7 @@
                 <li class="poll-item">
                     <div class="poll-title">{{ poll.Elections_for }}</div>
                     <div class="actions">
-                        <a class="links" href="{% url 'a-vote' forloop.counter %}" class="vote">Cast Vote</a> &nbsp;
+                        <a class="links" href="{% url 'a-vote' poll.id %}" class="vote">Cast Vote</a> &nbsp;
                     </div>
                 </li>
                 </div>

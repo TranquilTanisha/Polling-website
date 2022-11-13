@@ -56,8 +56,8 @@ def viewPollsB(request):
     context = {'polls': polls}
     return render(request, "vote/b_view_polls.html",context)
 
-def voteA(request,vote_id):
-    poll=ADivPoll.objects.get(pk=vote_id)
+def voteA(request,pk):
+    poll=ADivPoll.objects.get(id=pk)
     
     if request.method=="POST":
         selected_option = request.POST['poll']
@@ -76,8 +76,8 @@ def voteA(request,vote_id):
     context={"poll":poll}
     return render(request, "vote/vote.html", context)
 
-def voteB(request,vote_id):
-    poll=BDivPoll.objects.get(pk=vote_id)
+def voteB(request,pk):
+    poll=BDivPoll.objects.get(id=pk)
     
     if request.method=="POST":
         selected_option = request.POST['poll']
