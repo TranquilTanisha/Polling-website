@@ -1,22 +1,16 @@
 {% extends "vote/b_finalnav.html" %}
 
 {% block content %}
-<h>B Division Poll</h>
-<h>Title:{{poll.Elections_for}}</h>
-<style>
-    div{
-    margin-bottom: 10rem;
-    margin-left: 35rem;
-    margin-top: 10rem;
-    width: 30%;
-    height: 50%;
-    }
-    </style>
+{% load static %}
+<link rel="stylesheet" href="{% static 'vote/css/piechart.css' %}">
 
-<h1> {{poll.Elections_for}}</h1>
-<div>
+<div class="card">
+  <h1>B Division Poll :</h1>
+  <h1>{{poll.Elections_for}}</h1>
+  <div class = "chart">
     <canvas id="myChart"></canvas>
   </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -41,9 +35,10 @@
       document.getElementById('myChart'),
       config
     );
+    window.onload = function () {
+        document.documentElement.classList.add('go');
+    };
   </script>
   {% endblock %}
-
-
 
 

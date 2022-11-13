@@ -45,3 +45,10 @@ body {
   margin-bottom: 4rem;
   padding: 3rem;
 }
+th{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+td{
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}

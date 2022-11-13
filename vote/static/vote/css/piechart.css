@@ -1,0 +1,37 @@
+body {
+    background: url(/static/images/Navbar.png) no-repeat,
+    url(/static/images/WBG.jpg);
+    background-size: auto;
+    transition: background 2.2s;
+    overflow-x: hidden;
+}
+.go body {
+    background: url(/static/images/Navbar.png) no-repeat,
+      url(/static/images/Navbarb.png) no-repeat, url(/static/images/WBG.jpg);
+    background-size: auto;
+}
+.card {
+    background-color: rgb(241, 248, 255);
+    margin: 5rem;
+    margin-bottom: 9rem;
+    padding: 0rem 4rem 4rem 4rem;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 1s, border-radius 1.6s, padding 1.6s;
+  }
+.go .card {
+    opacity: 1;
+    border-radius: 60px;
+    padding-top: 4rem;
+    height: fit-content;
+}
+.chart{
+    width: 35%;
+    height: 35%;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -29,27 +29,20 @@
                 <table>
                     <tr>
                         <th>Name of the Candidate</th>
-                        <th></th>
                         <th>Percentage of votes</th>
-                        <th></th>
                     </tr>
                     <tr>
                         <td>{{ poll.candidate_1 }}</td>
-                        <td>----</td>
                         <td>{{poll.percentage_candidate_1}}%</td>
-                        <td></td>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_2}}</td>
-                        <td>----</td>
                         <td>{{poll.percentage_candidate_2}}%</td>
                         <td><a href="{% url 'piechart-A' poll.id %}">View Piechart</a></td>
                     </tr>
                     <tr>
                         <td>{{poll.candidate_3}}</td>
-                        <td>----</td>
                         <td>{{poll.percentage_candidate_3}}%</td>
-                        <td></td>
                     </tr>
                 </table>                
             </ul>
@@ -57,7 +50,7 @@
 
         <div class="panel-footer">
             {% if poll.percentage_candidate_1 > poll.percentage_candidate_2 and poll.percentage_candidate_1 > poll.percentage_candidate_3 %}
-                <p>Winner: {{poll.candidate_1}}</p>
+                <p><strong>Winner: {{poll.candidate_1}}</strong></p>
             {% elif poll.percentage_candidate_2 > poll.percentage_candidate_1 and poll.percentage_candidate_2 > poll.percentage_candidate_3 %}
                 <p>Winner: {{poll.candidate_2}}</p>
             {% elif poll.percentage_candidate_3 > poll.percentage_candidate_1 and poll.percentage_candidate_3 > poll.percentage_candidate_2 %}

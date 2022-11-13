@@ -1,6 +1,6 @@
 body {
   background: url(/static/images/Navbar.png) no-repeat,
-    url(/static/images/WBG.jpg);
+  url(/static/images/WBG.jpg);
   background-size: auto;
   transition: background 2.2s;
   overflow-x: hidden;
