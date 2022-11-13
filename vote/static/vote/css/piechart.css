@@ -12,7 +12,7 @@ body {
 }
 .card {
     background-color: rgb(241, 248, 255);
-    margin: 5rem;
+    margin: 3rem;
     margin-bottom: 9rem;
     padding: 0rem 4rem 4rem 4rem;
     border-radius: 5px;
@@ -35,3 +35,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.panel-heading{
+    font-size: 1.8rem;
+    padding-left: 5rem;
+    color: rgb(255, 255, 255);
+  }

@@ -94,3 +94,14 @@ sections {
   height: calc(100vh - 100px);
 }
 
+.footer{
+  margin-top: auto;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
