@@ -13,12 +13,22 @@ body {
 .panel{
     margin: 2rem;
     padding: 3rem;
-    border-radius: 60px;
+    padding-top: 0rem;
+    border-radius: 10px;
+    opacity: 0;
     background-color: white;
+    transition: 1.6s;
+}
+.go .panel{
+    opacity: 1;
+    border-radius: 60px;
+    padding: 3rem;
 }
 .panel-heading{
-    font-size: 1.5rem;
-}
+    font-size: 2rem;
+    padding-left: 4rem;
+    color: rgb(255, 255, 255);
+  } 
 .title{
     font-size: 1.2rem;
     padding-top: 1rem;
