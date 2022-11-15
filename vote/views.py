@@ -6,12 +6,6 @@ from .forms import ADivRegistrationForm, BDivRegistrationForm
 
 def home(request):
     return render(request, "vote/home.html")
-
-def viewPolls(request):
-    return render(request, "vote/view_polls.html")
-
-def login(request):
-    return render(request, 'vote/login.html', {})
     
 def checkDiv(request):
     return render(request, "vote/check_div.html")
@@ -95,13 +89,6 @@ def voteB(request,pk):
     
     context={"poll":poll}
     return render(request, "vote/vote.html", context)
-
-def result(request):
-    pollA = ADivPoll.objects.all()
-    pollB = BDivPoll.objects.all()
-    #total_A=pollA.candidate_1_count+pollA.candidate_2_count+pollA.candidate_3_count
-    context = {'pollA':pollA, "pollB":pollB}
-    return render(request,'vote/result.html',context)
 
 def resultA(request):
     pollA = ADivPoll.objects.all()
