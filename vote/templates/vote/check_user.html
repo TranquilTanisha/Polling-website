@@ -1,0 +1,25 @@
+{% extends 'vote/navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vote/css/check-div.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Digital Voting System</title>
+</head>
+<body>
+<div class="panel-heading"><h1>Select Your Respective Role</h1></div>
+<div class="card">
+<div class="actions">
+<a class="link" href="/admin/">Admin</a>
+<a class="link" href="{% url 'check-div' %}">Student</a>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}

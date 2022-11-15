@@ -10,6 +10,9 @@ def home(request):
 def checkDiv(request):
     return render(request, "vote/check_div.html")
 
+def checkUser(request):
+    return render(request, "vote/check_user.html")
+
 def registerA(request):
     form=ADivRegistrationForm()
     
